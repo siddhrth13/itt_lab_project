@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prediction Results</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <style>
+      .center-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column; /* Added to arrange cards vertically */
+      }
+      .card {
+        margin-bottom: 20px; /* Added margin to separate cards */
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+      <div class="container">
+        <a href="#" class="navbar-brand">
+          <img
+            src="res/images/logo.png"
+            alt="Health Lens Logo"
+            class="logo-img"
+            style="height: 3em; width: auto"
+          />
+          health-lens
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navmenu"
+        >
+          <span class="navbar-togger-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="disease.html" class="nav-link">Diagnose</a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="index.html"
+                class="nav-link"
+                id="loginhref"
+                name="loginhref"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="marketplace/index.html"
+                class="nav-link"
+                id="market-button"
+                >Marketplace</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section id="learn" class="p-5">
+        <div class="contatiner">
+          <div class="row align-items-center justify-content-between">
+            <div class="col-md">
+              <img src="res/images/Doctors-pana.svg" class="" img-fluid alt="" />
+            </div>
+            <div class="col-md p-5">
+              <h2>Your Diagnosis say</h2>
+              <p class="lead" id="predictionClass"></p>
+              <p id="predictionDescription">
+              </p>
+               <a href="extradiseaseinfo.html" class="btn btn-light mt-3">
+                <i class="bi bi-chevron-right"></i>Read More
+              </a>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section id="learn" class="p-5 bg-dark text-light">
+        <div class="contatiner">
+          <div class="row align-items-center justify-content-between">
+            <div class="col-md">
+                <img
+                  class="img-fluid"
+                  alt=""
+                  id="symptom_image"
+                />
+              </div>
+            <div class="col-md p-5">
+              <h2>How would you know?</h2>
+              <p class="lead">
+                Symptoms include
+              </p>
+              <p id="predictionSymptoms">
+              </p>
+              <!-- <a href="" class="btn btn-light mt-3">
+                <i class="bi bi-chevron-right"></i>Read More
+              </a> -->
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="p-5">
+        <h2>Recommended Medications</h2>
+        <div class="container bg-offwhite" style="padding-top: 40px;">
+            <div class="row justify-content-center">
+                <div class="col-sm-4 d-flex">
+                    <div class="card w-100">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title" id="medication1"></h5>
+                            <p class="card-text" id="med1price"></p>
+                            <p class="card-text"></p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="medication1Checkbox">
+                                <label class="form-check-label" for="medication1Checkbox">
+                                    Add to Cart
+                                </label>
+                                <input type="number" class="form-control mt-2" id="medication1Quantity" placeholder="Quantity" min="0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 d-flex">
+                    <div class="card w-100">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title" id="medication2"></h5>
+                            <p class="card-text" id="med2price"></p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="medication2Checkbox">
+                                <label class="form-check-label" for="medication2Checkbox">
+                                    Add to Cart
+                                </label>
+                                <input type="number" class="form-control mt-2" id="medication2Quantity" placeholder="Quantity" min="0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 d-flex">
+                    <div class="card w-100">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title" id="medication3"></h5>
+                            <p class="card-text" id="med3price"></p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="medication3Checkbox">
+                                <label class="form-check-label" for="medication3Checkbox">
+                                    Add to Cart
+                                </label>
+                                <input type="number" class="form-control mt-2" id="medication3Quantity" placeholder="Quantity" min="0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-info" id="buyNow">Buy Now</button>
+        </div>
+    </section>
+
+    <h2 id="totalPrice"></h2>
+
+    <section id="learn" class="p-5">
+        <div class="contatiner">
+          <div class="row align-items-center justify-content-between">
+            <div class="col-md">
+              <img src="res/images/Medicine-bro.svg" class="" img-fluid alt="" />
+            </div>
+            <div class="col-md p-5">
+              <h2>Before you Buy</h2>
+              <p class="lead">A note to all of our users</p>
+              <p>
+                At our website, we provide recommendations for non-prescription
+                medications as part of our commitment to promoting well-being.
+                However, it's essential to recognize the significance of
+                consulting with a healthcare provider for personalized advice.
+                Your health is paramount to us, which is why we strongly encourage
+                seeking professional guidance. Our overarching goal is to empower
+                individuals to take proactive measures in preventing diseases,
+                emphasizing early detection and intervention for optimal health
+                outcomes. Together, let's prioritize your health journey with
+                informed decisions and proactive steps towards wellness.
+              </p>
+              <!-- <a href="" class="btn btn-light mt-3">
+                <i class="bi bi-chevron-right"></i>Read More
+              </a> -->
+            </div>
+          </div>
+        </div>
+      </section>
+  
+    
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; Health-Lens 2024</p>
+      </footer>
+
+      <script>
+        // Extract query parameter from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const predictedClass = urlParams.get("class");
+        const predictedDescription = urlParams.get("description");
+        const predictedSymptoms = urlParams.get("symptoms");
+    
+        const predictedMed1 = urlParams.get("med1");
+        const predictedMed2 = urlParams.get("med2");
+        const predictedMed3 = urlParams.get("med3");
+        const predictedImg = urlParams.get("dimg");
+    
+        const predictedMed1p = urlParams.get("med1p");
+        const predictedMed2p = urlParams.get("med2p");
+        const predictedMed3p = urlParams.get("med3p");
+    
+        function extractAndConvertPrice(priceString) {
+            // Extract the numeric part of the price string
+            const numericPart = priceString.substring(3); // Assuming the price always starts after "Rs."
+    
+            // Convert the numeric part to an integer
+            const price = parseInt(numericPart);
+    
+            return price;
+        }
+    
+        // Display predicted class on the page
+        document.getElementById("predictionClass").textContent = predictedClass;
+        document.getElementById("predictionDescription").textContent = predictedDescription;
+        document.getElementById("predictionSymptoms").textContent = predictedSymptoms;
+        document.getElementById("medication1").textContent = predictedMed1;
+        document.getElementById("medication2").textContent = predictedMed2;
+        document.getElementById("medication3").textContent = predictedMed3;
+    
+        document.getElementById('med1price').textContent = predictedMed1p;
+        document.getElementById('med2price').textContent = predictedMed2p;
+        document.getElementById('med3price').textContent = predictedMed3p;
+    
+        const sym_img = document.getElementById('symptom_image');
+        sym_img.src = predictedImg;
+    
+        // Calculate the total price for all medications
+        const buyNowClick = document.getElementById('buyNow');
+    
+        buyNowClick.addEventListener('click', () => {
+            function calculateTotalPrice() {
+                // Medication 1
+                const med1Checkbox = document.getElementById("medication1Checkbox");
+                const med1Quantity = document.getElementById("medication1Quantity").value;
+                const med1Price = extractAndConvertPrice(document.getElementById("med1price").textContent);
+                let med1TotalPrice = 0;
+    
+                // If medication 1 checkbox is checked and quantity is greater than 0
+                if (med1Checkbox.checked && med1Quantity > 0) {
+                    med1TotalPrice = med1Price * parseInt(med1Quantity);
+                }
+    
+                // Repeat the above steps for medication 2 and medication 3
+                // Medication 2
+                const med2Checkbox = document.getElementById("medication2Checkbox");
+                const med2Quantity = document.getElementById("medication2Quantity").value;
+                const med2Price = extractAndConvertPrice(document.getElementById("med2price").textContent);
+                let med2TotalPrice = 0;
+    
+                if (med2Checkbox.checked && med2Quantity > 0) {
+                    med2TotalPrice = med2Price * parseInt(med2Quantity);
+                }
+    
+                // Medication 3
+                const med3Checkbox = document.getElementById("medication3Checkbox");
+                const med3Quantity = document.getElementById("medication3Quantity").value;
+                const med3Price = extractAndConvertPrice(document.getElementById("med3price").textContent);
+                let med3TotalPrice = 0;
+    
+                if (med3Checkbox.checked && med3Quantity > 0) {
+                    med3TotalPrice = med3Price * parseInt(med3Quantity);
+                }
+    
+                const totalPrice = med1TotalPrice + med2TotalPrice + med3TotalPrice;
+                window.location.href = "checkout.html?totalPrice=" + encodeURIComponent(totalPrice);
+                document.getElementById("totalPrice").textContent = totalPrice;
+            }
+    
+            calculateTotalPrice();
+        });
+    
+    </script>
+    
+  </body>
+</html>
